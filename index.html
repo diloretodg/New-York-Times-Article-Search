@@ -1,25 +1,50 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">
+<!DOCTYPE html>
 
 
-var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-queryURL += '?' + $.param({
- 'api-key': "eddc11ba88124385b7361ea58e855334",
- 'q': "the president",
- 'begin_date': "20100101",
- 'end_date': "20141231",
- 'page': 0,
- 'facet_filter': "true"
-});
+<html lang="eng-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>NYT</title>
+        <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+    </head>
 
-console.log(queryURL);
+    <body>
 
-$.ajax({
- url: queryURL,
- method: 'GET',
-}).done(function(result) {
- console.log(result);
-})
+       <div class="container">
+
+         <header>
+             <h1>New York Times Search</h1>
+         </header>
+
+         <main>
+             <form id="OnlyForm">
+                 <div>
+                 <input type="text" name="search">
+                 </div>
+                 <input type="text" name="records">
+                 <div>
+                 <input type="text" name="start">
+                 </div>
+                 <div>
+                 <input type="text" name="end">
+                 </div>
+             </form>
+         </main>
+         <section class="topArticles">
+           <p>Top Articles</p>  
+         </section>
+         
+         <footer>
+             <p>made with lots and lots of</p>
+         </footer>
+
+       </div>
+        
+       <script  src="assets/app.js" type="text/javascript"></script>
+    </body>
+</html>
 
 
-</script>
