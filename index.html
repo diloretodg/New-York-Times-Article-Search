@@ -1,0 +1,25 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+queryURL += '?' + $.param({
+ 'api-key': "eddc11ba88124385b7361ea58e855334",
+ 'q': "the president",
+ 'begin_date': "20100101",
+ 'end_date': "20141231",
+ 'page': 0,
+ 'facet_filter': "true"
+});
+
+console.log(queryURL);
+
+$.ajax({
+ url: queryURL,
+ method: 'GET',
+}).done(function(result) {
+ console.log(result);
+})
+
+
+</script>
